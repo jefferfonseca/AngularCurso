@@ -1,0 +1,25 @@
+<!--ngIf-->
+<h1 class="container bg-dark text-white text-center my-4 py-4">
+    ngIf show = {{ show }}
+    <!-- {{ show }} ->imprime la variable en el h1-->
+  </h1>
+  <div class="container">
+    <!--condicional (show = !show) - !show cambia el valor de la variable
+    <button class="btn btn-warning" (click)="show = !show">Acción</button>
+    -->
+    <button class="btn btn-warning mb-3" (click)="show = !show">Acción</button>
+  
+    <p class="text-info" *ngIf="show; else ShowDos">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ut repellat
+      laborum aperiam praesentium id optio accusamus quibusdam perspiciatis nam
+      odio quod rerum illum dolore, hic sunt quasi vitae ipsum?
+    </p>
+    <ng-template #ShowDos>
+      <p class="text-danger">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime inventore
+        quod veritatis obcaecati ullam modi aspernatur soluta incidunt cumque.
+        Itaque nam temporibus consequatur cumque minus exercitationem ad id, autem
+        totam.
+      </p>
+    </ng-template>
+  </div>

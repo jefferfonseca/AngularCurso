@@ -1,0 +1,31 @@
+
+<!--ng Class-->
+
+<h1 class="container bg-dark text-white text-center my-4 py-4">
+    ngClass show = {{ show }}
+    <!-- {{ show }} ->imprime la variable en el h1-->
+  </h1>
+  
+  <div class="container">
+    <!-- Visible -> variable para mostrar parrafo  d-block (muestra) d-none(oculta)-->
+    <button class="btn btn-danger mb-3" (click)="fondo = 'bg-dark'">
+      Primero
+    </button>
+    <button class="btn btn-warning mb-3" (click)="fondo = 'btn-danger'">
+      Segundo
+    </button>
+    <button class="btn btn-danger mb-3" (click)="visible = 'primero'">
+      Mostrar 1
+    </button>
+    <button class="btn btn-warning mb-3" (click)="visible = 'segundo'">
+      Mostrar 2
+    </button>
+  
+    <!-- {'d-block': visible == 'primero'}  {}sirve para decir que es un condicional,
+      'd-block' nombre de la clase a agregar 
+      visible variable
+      'primero' nombre enviardo desde (click) del boton
+      puede servir para crear un filtro-->
+    <p class="text-info d-none" [ngClass] = "{'d-block': visible == 'primero'}">Jeffer</p>
+    <p class="text-danger d-none" [ngClass] = "{'d-block':visible == 'segundo'}">Fonseca</p>
+  </div>
